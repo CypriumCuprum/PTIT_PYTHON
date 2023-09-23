@@ -20,7 +20,7 @@ for _ in range(int(input())):
     n = int(input())
     rs = "22"
     r = 1
-    while r < len(li) and li[r] < n :
+    while r < len(li) and li[r] < n:
         rs = rs + " " + str(li[r])
         r += 1
     print(rs)
