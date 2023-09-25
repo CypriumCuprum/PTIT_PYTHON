@@ -1,28 +1,21 @@
-import time
-start = time.time()
-dic = {i:0 for i in range(5, 2000006, 2)}
-dic[0] = 0
-dic[1] = 0
-for i in range(3, 2000006, 2):
-    if dic[i] == 0:
-        for j in range(3 * i, 2000006, 2*i):
-            dic[j] = i
+import array as arr
 
-for i in range(3, 2000006, 2):
-    if dic[i] == 0:
-        dic[i] = i
+li = arr.array('i', [0] * 2000001)
+li[0] = li[1] = 0
+for i in range(2, 1415):
+    if li[i] == 0:
+        for j in range(2 * i, 2000001, i):
+            li[j] = i
+
+for i in range(2, 2000001):
+    if li[i] == 0:
+        li[i] = i
     else:
-        dic[i] = dic[dic[i]] + dic[int(i/dic[i])]
+        li[i] = li[li[i]] + li[i // li[i]]
 
 rs = 0
 from sys import stdin
-import random
-for _ in range(1000000):
-    n = random.randint(2, 1000005)
-    while n % 2 == 0:
-        rs += 2
-        n = int(n/2)
-    rs += dic[n]
 
+for _ in range(int(stdin.readline())):
+    rs += li[int(stdin.readline())]
 print(rs)
-print(time.time() - start)
