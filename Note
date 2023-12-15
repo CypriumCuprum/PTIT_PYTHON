@@ -1,0 +1,19 @@
+String format:
+    value = x
+    txt = "(text){para:.4f}(text)".format(para=value)
+    print(txt) -> (text)(value formatted)(text)
+chr(): convert ascii code into its corresponding character
+in theo list: " ".join(list)
+
+nhập ảo ma từ bài PYKT089
+e = []
+while True:
+    try:
+        e.extend(map(int, input().split()))
+    except:
+        break
+
+
+Những bài ảo ma về nhập xuất:
+PY04005: Nhập xuất phải nhập theo kiểu nhập hết testcase mới được xử lí
+PY04014: Decimal(x) ảo ma vcl vì phép chia trong python sai số vcl
